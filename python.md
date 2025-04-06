@@ -54,6 +54,7 @@ def greet(name):
 ```
 
 ### 2.4. If & Conditions
+- If else
 ```python
 if x > 10:
     print("x is greater than 10")
@@ -61,18 +62,71 @@ elif x == 10:
     print("x is 10")
 else:
     print("x is less than 10")
-```
-// TODO add more conditions match case so an inline conditions
 
+
+# Short hand if
+print("x is 10") if x == 10 else print("x is not 10")
+
+```
+- match case
+```python
+char = 'e'
+match char:
+  case 'a':
+    print("This character is a")
+  case 'b':
+    print("This character is b")
+  case 'c' | 'd':
+  	print("This character is c or d")
+  case _:
+    print("This character is not a , b , c nor d")
+```
 ### 2.5. Loops
+- loop on range
 ```python
 for i in range(5):  # For loop prints 0 to 4
     print(i)
 ```
 
-// todo  add itrable example dict/array
-// todo pass/continue
-// todo catch exception
+- loop on array
+```python
+cities = ["Cairo", "London", "Paris"]
+for x in cities:
+  print(x)
+```
+
+- loop on dictionary
+```python
+dict =	{
+  "key1": "value1",
+  "key2": "value2"
+}
+
+for k, v in dict.items():
+  print(k, "is", v)
+
+```
+- using continue
+
+```python
+for x in range(0, 6):
+  if x == 2:
+    continue
+  print(x) 
+# prints 0 1 3 4 5
+```
+
+
+### Catch Exception
+
+```python
+try:
+  doSomething()
+except:
+  print("Error occurred")
+finally:
+  print("Done")
+```
 
 ## 3. Architecture
 ### 3.1. Importing Packages
