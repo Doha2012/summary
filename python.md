@@ -130,23 +130,59 @@ finally:
 
 ## 3. Architecture
 ### 3.1. Importing Packages
-//todo datetime example
 ```python
-import math
-print(math.sqrt(16))  # 4.0
+from datetime import datetime, timedelta
+
+current_datetime = datetime.now()
+
+date_str = "2025-02-23 16:30:00"
+parsed_datetime = datetime.strptime(date_str, "%Y-%m-%d %H:%M:%S")
+
+old_date = parsed_datetime - timedelta(days=7)  
 ```
 
 ### 3.2. Classes & Dependencies
-// to do add attributes and example how it's used in main
 
-
-### 3.3. Re-using Functions
 ```python
-from my_module import my_function
+# file course.py
+class Course:
+    def __init__(self, name):
+        self.name = name
+
+    def __str__(self):
+        return self.name
 ```
-// todo add full code for this example like both classes
+
+```python
+# file student.py
+from course import Course  
+
+class Student:
+    def __init__(self, name):
+        self.name = name
+        self.courses = [] 
+
+    def enroll(self, course):
+        self.courses.append(course)
+        print("Student:",  self.name, "enrolled in:", course)
+
+    def list_courses(self):
+            print("Student",  self.name,  "courses:", ' - '.join(course.name for course in self.courses))
+
+# Example usage
+if __name__ == "__main__":
+    math = Course("Math")
+    physics = Course("Physics")
+
+    adam = Student("Adam")
+    adam.enroll(math)      # Student: Adam enrolled in: Math
+    adam.enroll(physics)   # Student: Adam enrolled in: Physics
+    adam.list_courses()    # Student Adam courses: Math - Physics
+```
+
+## 4. Input & output
 //todo system input & file input
-## 4. Unit Tests 
+## 5. Unit Tests 
 
 
 // todo add unit test example 
