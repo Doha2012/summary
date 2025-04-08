@@ -181,7 +181,55 @@ if __name__ == "__main__":
 ```
 
 ## 4. Input & output
-//todo system input & file input
+### 4.1. System Input
+
+```python
+input_val = input("Choose number between 1 and 20:")
+```
+### 4.2. File Input
+sample.txt
+```
+This is just
+To test 
+How read file in python works
+```
+
+```python
+my_file = open("sample.txt")
+print("just 4 characters =>", my_file.read(4))
+print("just one line => ", my_file.readline())
+print("the whole file => ", my_file.read())
+my_file.close()
+```
+
+Output
+```
+just 4 characters => This
+just one line =>   is just
+
+the whole file =>  To test 
+How read file in python works
+```
+
+### 4.3. System output
+
+```python
+print("Hello")              # Hello
+print("Hello", "world") # Hello world
+```
+
+### 4.4. File output
+```python
+my_file = open("sample.txt", "a")
+my_file.write("This text will be added to the end of the file")
+my_file.close()
+```
+
+```python
+my_file = open("sample.txt", "w")
+my_file.write("This text will overwrite the contents of the file")
+my_file.close()
+```
 ## 5. Unit Tests 
 
 
